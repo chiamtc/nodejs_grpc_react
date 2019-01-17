@@ -1,0 +1,114 @@
+// @Author: Khoa Tran <Sun>
+// @Date:   2017-11-24T16:40:34+10:00
+// @Email:  khoa@medic8health.com
+// @Filename: index.scss
+// @Last modified by:   Sun
+// @Last modified time: 2017-12-05T12:07:17+10:00
+@import "~lord_of_the_rings";
+
+$main_navigation_bar_height: $MAIN_NAVIGATION_BAR_HEIGHT;
+
+.dashboard__container {
+  height: calc(100vh - #{($main_navigation_bar_height)});
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 1fr;
+  padding: 10px;
+  grid-template-areas: "welcomeMessage title1 title2 " "dashboard_map dashboard_map dashboard_map";
+
+
+  .dashboard_title {
+
+  }
+  .withHalo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .halo {
+    $sizing: 1.65em;
+    $haloColor: #F5A623;
+    float: right;
+    border: $haloColor 3px solid;
+    height: $sizing;
+    width: $sizing;
+    border-radius: $sizing/2;
+    text-align: center;
+    font-weight: 400;
+    display: inline-block;
+    color: $haloColor;
+    margin-top: -0.2em;
+    .haloCount {
+      font-size: $sizing - 1.0em;
+      line-height: $sizing;
+      padding-top: 0.3em;
+    }
+  }
+  .welcomeMessage {
+    grid-area: welcomeMessage;
+  }
+  .profile {
+  }
+
+  .titleTitle {
+    font-size: 1.4em;
+  }
+
+  .title1 {
+
+    grid-area: title1;
+    .sampleStats {
+      display: flex;
+      flex-direction: row;
+      .stats {
+        width: 50%;
+      }
+      .chart {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        .innerChart {
+          width: 50%;
+        }
+      }
+
+    }
+  }
+
+  .title2 {
+    grid-area: title2;
+    .sampleStats {
+      display: flex;
+      flex-direction: row;
+      .stats {
+        width: 50%;
+      }
+      .chart {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        .innerChart {
+          width: 50%;
+        }
+      }
+
+    }
+  }
+
+  .title3 {
+    grid-area: title3;
+  }
+
+  .dashboard_map {
+    grid-area: dashboard_map;
+  }
+
+  .circularProgress{
+    color:$NOTES_LIST_BACKGROUND_COLOR;
+    //background-color: $NOTES_LIST_BACKGROUND_COLOR;
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+src/masterConfig.js
+.idea/
+src/app/test/lcov-report/**
+src/app/test/clover.xml
+src/app/test/coverage-final.json
+src/app/test/lcov.info
