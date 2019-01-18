@@ -356,15 +356,15 @@ proto.employees.EmployeesPromiseClient.prototype.update =
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.employees.Empty,
- *   !proto.employees.Employee>}
+ *   !proto.employees.EmployeeList>}
  */
 const methodInfo_Employees_Watch = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.employees.Employee,
+  proto.employees.EmployeeList,
   /** @param {!proto.employees.Empty} request */
   function(request) {
     return request.serializeBinary();
   },
-  proto.employees.Employee.deserializeBinary
+  proto.employees.EmployeeList.deserializeBinary
 );
 
 
@@ -372,7 +372,7 @@ const methodInfo_Employees_Watch = new grpc.web.AbstractClientBase.MethodInfo(
  * @param {!proto.employees.Empty} request The request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.employees.Employee>}
+ * @return {!grpc.web.ClientReadableStream<!proto.employees.EmployeeList>}
  *     The XHR Node Readable Stream
  */
 proto.employees.EmployeesClient.prototype.watch =
@@ -389,7 +389,7 @@ proto.employees.EmployeesClient.prototype.watch =
  * @param {!proto.employees.Empty} request The request proto
  * @param {!Object<string, string>} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.employees.Employee>}
+ * @return {!grpc.web.ClientReadableStream<!proto.employees.EmployeeList>}
  *     The XHR Node Readable Stream
  */
 proto.employees.EmployeesPromiseClient.prototype.watch =
