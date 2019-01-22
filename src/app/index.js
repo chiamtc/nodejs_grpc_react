@@ -1,6 +1,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dashboard from './_dashboard'
+import Routes from './routes'
 
-ReactDOM.render(<Dashboard/>, document.getElementById('root'));
+ReactDOM.render(<Routes/>, document.getElementById('root'));
