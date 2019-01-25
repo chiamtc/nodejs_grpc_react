@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import {withRouter} from 'react-router-dom'
 const {List, Empty, Employee, Watch} = require('../proto/employees_pb.js');
 const {EmployeesClient, EmployeesPromiseClient} = require('../proto/employees_grpc_web_pb.js');
-
 var client = new EmployeesPromiseClient('http://' + window.location.hostname + ':8080',
     null, null);
 
@@ -35,7 +34,8 @@ class Dashboard extends Component {
         */
 
 
-        var watcher = client.watch(request, {});
+        var meta = {'custom-header-1':localStorage.getItem('access_token')}
+        var watcher = client.watch(request, meta);
         watcher.on('data', (response) => {
             console.log('watching?', response.toObject())
             this.setState({employeesList: response.toObject().employeesList})
@@ -98,11 +98,14 @@ class Dashboard extends Component {
                 <div>
                     {this.renderList()}
                 </div>
+                <hr/>
                 <form>
                     Name:<input onChange={(e) => this.setState({name: e.target.value})}/>
                     Email:<input onChange={(e) => this.setState({email: e.target.value})}/>
                     <button onClick={this.testSubmit}>Submit</button>
                 </form>
+                <br/>
+                <br/>
                 <button onClick={(e)=>{e.preventDefault(); localStorage.clear();this.props.history.push('/login')}}>Sign out</button>
             </div>
         )

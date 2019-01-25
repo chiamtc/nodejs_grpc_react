@@ -35,6 +35,8 @@ class Login extends Component {
                 Email:<input onChange={(e)=> this.setState({email:e.target.value})}/>
                 <br/>
                 Password:<input onChange={(e)=> this.setState({password:e.target.value})}/>
+                <br/>
+                <br/>
                 <button onClick={this.login}>Login</button>
             </form>
         </div>)
