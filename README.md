@@ -13,3 +13,5 @@ I've only tested on Mac platform, hopefully it works on yours. To windows platfo
 4. `npm run dev`
 5. go to `localhost:9000` , login with email: `test@test.com` and password: `1234`. 
 
+
+Open issue in this repo if you have any questions.
